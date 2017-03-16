@@ -6,7 +6,7 @@ FROM ubuntu:16.04
 
 #$ docker run -v /Users/$USER/go/src/github.com/{GITHUB USER}/libstorage/:/go/src/github.com/emccode/libstorage/ -w=/go/src/github.com/emccode/libstorage/ akiraw95/ubuntugoglide
 
-RUN apt-get update && apt-get install -y
+RUN apt-get update && apt-get upgrade -y
 RUN apt-get install -y \
 		python-dev \
 		python-pip \
@@ -14,7 +14,8 @@ RUN apt-get install -y \
 		libxslt1-dev \
 		zlib1g-dev \
 		libffi-dev \
-		libssl-dev
+		libssl-dev \
+		nano
 RUN pip install scrapy
 		
 #ENV SCRAPYPROJ /scrapy
